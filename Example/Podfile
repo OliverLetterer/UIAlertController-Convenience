@@ -1,0 +1,7 @@
+
+target 'UIAlertControllerConvenienceAPI', :exclusive => true do
+  pod "UIAlertControllerConvenienceAPI", :path => "../"
+
+  pod 'Specta', '~> 0.2.1'
+  pod 'Expecta'
+end
