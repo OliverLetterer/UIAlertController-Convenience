@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "UIAlertControllerConvenienceAPI"
   s.version          = "0.1.0"
-  s.summary          = "ConvenienceAPI for UIAlertController."
+  s.summary          = "Convenience API for UIAlertController."
   s.homepage         = "https://github.com/OliverLetterer/UIAlertController-Convenience"
   s.license          = 'MIT'
   s.author           = { "Oliver Letterer" => "oliver.letterer@gmail.com" }
