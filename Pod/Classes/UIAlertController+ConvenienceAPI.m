@@ -25,9 +25,19 @@
 
 @implementation UIAlertController (ConvenienceAPI)
 
-+ (instancetype)actionSheetAlertControllerWithTitle:(NSString *)title
++ (instancetype)actionSheetControllerWithTitle:(NSString *)title
 {
     return [self alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+}
+
++ (instancetype)alertViewControllerWithTitle:(NSString *)title
+{
+    return [self alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+}
+
++ (instancetype)alertViewControllerWithTitle:(NSString *)title message:(NSString *)message
+{
+    return [self alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
 }
 
 - (UIAlertAction *)addButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler
@@ -35,6 +45,11 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:handler];
     [self addAction:action];
     return action;
+}
+
+- (UIAlertAction *)addCancelButton
+{
+    return [self addCancelButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
 }
 
 - (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title
@@ -54,6 +69,49 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDestructive handler:handler];
     [self addAction:action];
     return action;
+}
+
+- (void)addUsernameTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler
+{
+    [self addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.keyboardType = UIKeyboardTypeDefault;
+        textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+
+        if (configurationHandler) {
+            configurationHandler(textField);
+        }
+    }];
+}
+
+- (void)addEMailTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler
+{
+    [self addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.keyboardType = UIKeyboardTypeEmailAddress;
+        textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+
+        if (configurationHandler) {
+            configurationHandler(textField);
+        }
+    }];
+}
+
+- (void)addPasswordTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler
+{
+    [self addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.secureTextEntry = YES;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.keyboardType = UIKeyboardTypeDefault;
+        textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+
+        if (configurationHandler) {
+            configurationHandler(textField);
+        }
+    }];
 }
 
 @end

@@ -25,12 +25,22 @@
 
 @interface UIAlertController (ConvenienceAPI)
 
-+ (instancetype)actionSheetAlertControllerWithTitle:(NSString *)title;
++ (instancetype)actionSheetControllerWithTitle:(NSString *)title;
+
++ (instancetype)alertViewControllerWithTitle:(NSString *)title;
++ (instancetype)alertViewControllerWithTitle:(NSString *)title message:(NSString *)message;
 
 - (UIAlertAction *)addButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+
+- (UIAlertAction *)addCancelButton;
 - (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title;
 - (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+
 - (UIAlertAction *)addDestructiveButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+
+- (void)addUsernameTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
+- (void)addEMailTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
+- (void)addPasswordTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
 
 @end
 
