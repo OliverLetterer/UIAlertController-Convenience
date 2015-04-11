@@ -1,7 +1,7 @@
 PODS:
-  - Expecta (0.3.1)
+  - Expecta (0.4.0)
   - Specta (0.2.1)
-  - UIAlertControllerConvenienceAPI (0.1.0)
+  - UIAlertControllerConvenienceAPI (0.2.0)
 
 DEPENDENCIES:
   - Expecta
@@ -10,11 +10,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   UIAlertControllerConvenienceAPI:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
-  UIAlertControllerConvenienceAPI: fd9bad7c3fff7b15d40ca72fd2e9a28f48d51c9f
+  Expecta: 392a6b5bfb9f4097e47dd8064d9b732079490332
+  Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
+  UIAlertControllerConvenienceAPI: 4859b6d7e6550fa1c0e751a9ab1b021a8a25730c
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.3

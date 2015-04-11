@@ -21,26 +21,30 @@
  THE SOFTWARE.
  */
 
-@import UIKit;
+#import <UIKit/UIKit.h>
+
+
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAlertController (ConvenienceAPI)
 
 + (instancetype)actionSheetControllerWithTitle:(NSString *)title;
 
 + (instancetype)alertViewControllerWithTitle:(NSString *)title;
-+ (instancetype)alertViewControllerWithTitle:(NSString *)title message:(NSString *)message;
++ (instancetype)alertViewControllerWithTitle:(NSString *)title message:(nullable NSString *)message;
 
-- (UIAlertAction *)addButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+- (UIAlertAction *)addButtonWithTitle:(NSString *)title action:(void (^__nullable)(UIAlertAction *action))handler;
 
 - (UIAlertAction *)addCancelButton;
 - (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title;
-- (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+- (UIAlertAction *)addCancelButtonWithTitle:(NSString *)title action:(void (^__nullable)(UIAlertAction *action))handler;
 
-- (UIAlertAction *)addDestructiveButtonWithTitle:(NSString *)title action:(void (^)(UIAlertAction *action))handler;
+- (UIAlertAction *)addDestructiveButtonWithTitle:(NSString *)title action:(void (^__nullable)(UIAlertAction *action))handler;
 
-- (void)addUsernameTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
-- (void)addEMailTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
-- (void)addPasswordTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
+- (void)addUsernameTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
+- (void)addEMailTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
+- (void)addPasswordTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
 
 @end
 
@@ -48,8 +52,10 @@
 
 @interface UIViewController (UIAlertControllerConvenienceAPI)
 
-- (void)presentActionSheet:(UIAlertController *)actionSheet fromBarButtonItem:(UIBarButtonItem *)barButtonItem animated:(BOOL)animated completion:(dispatch_block_t)completion;
-- (void)presentActionSheet:(UIAlertController *)actionSheet inView:(UIView *)view animated:(BOOL)animated completion:(dispatch_block_t)completion;
-- (void)presentActionSheet:(UIAlertController *)actionSheet fromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated completion:(dispatch_block_t)completion;
+- (void)presentActionSheet:(UIAlertController *)actionSheet fromBarButtonItem:(UIBarButtonItem *)barButtonItem animated:(BOOL)animated completion:(nullable dispatch_block_t)completion;
+- (void)presentActionSheet:(UIAlertController *)actionSheet inView:(UIView *)view animated:(BOOL)animated completion:(nullable dispatch_block_t)completion;
+- (void)presentActionSheet:(UIAlertController *)actionSheet fromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated completion:(nullable dispatch_block_t)completion;
 
 @end
+
+NS_ASSUME_NONNULL_END
