@@ -1,6 +1,6 @@
 /*
  UIAlertController (Convenience)
- Copyright (c) 2014 Oliver Letterer <oliver.letterer@gmail.com>, Sparrow-Labs
+ Copyright (c) 2014-2015 Oliver Letterer <oliver.letterer@gmail.com>, Sparrow-Labs
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addUsernameTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
 - (void)addEMailTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
 - (void)addPasswordTextFieldWithConfigurationHandler:(void (^__nullable)(UITextField *textField))configurationHandler;
+
+- (void)show;
+- (void)showWithCompletionHandler:(dispatch_block_t)completion;
 
 @end
 
