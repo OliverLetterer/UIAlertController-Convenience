@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "UIAlertControllerConvenienceAPI"
-  s.version          = "0.2.2"
+  s.version          = "0.3.0"
   s.summary          = "Convenience API for UIAlertController."
   s.homepage         = "https://github.com/OliverLetterer/UIAlertController-Convenience"
   s.license          = 'MIT'
   s.author           = { "Oliver Letterer" => "oliver.letterer@gmail.com" }
   s.source           = { :git => "https://github.com/OliverLetterer/UIAlertController-Convenience.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '8.0'
+  s.platforms    = { :ios => '8.0', :tvos => '9.0' }
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
